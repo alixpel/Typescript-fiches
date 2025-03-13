@@ -31,11 +31,22 @@ let afficherPersonne = (
 }
 //console.log("pénom : " + prenom);
 
-afficherPersonne(prenom, age, sexe, sport, adresse);
+//afficherPersonne(prenom, age, sexe, sport, adresse);
 
-let anniversaire = (in_age:number=17) : number => {
+let anniversaire = (in_age:number) : number => {
     return in_age + 1;
 }
-let newAge:number;
-newAge = anniversaire(age);
-console.log(`Age : ${newAge}`);
+function afficherResultat(resultat:number) : void {
+    console.log(`Le résultat : ${resultat}`);
+}
+
+function afficherAge(age:number) : void {
+    console.log(`Age : ${age}`);
+}
+
+function ajout(nb1:number, nb2:number, callback : (n : number) => void) {
+    let res = nb1 + nb2;
+    callback(res);
+}
+
+ajout(10,3, afficherAge);

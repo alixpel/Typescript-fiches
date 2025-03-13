@@ -20,10 +20,18 @@ let afficherPersonne = (in_prenom, in_age, in_sexe, in_sports, in_adresse) => {
     console.log(in_adresse.cp + " " + in_adresse.ville);
 };
 //console.log("pénom : " + prenom);
-afficherPersonne(prenom, age, sexe, sport, adresse);
-let anniversaire = (in_age = 17) => {
+//afficherPersonne(prenom, age, sexe, sport, adresse);
+let anniversaire = (in_age) => {
     return in_age + 1;
 };
-let newAge;
-newAge = anniversaire(age);
-console.log(`Age : ${newAge}`);
+function afficherResultat(resultat) {
+    console.log(`Le résultat : ${resultat}`);
+}
+function afficherAge(age) {
+    console.log(`Age : ${age}`);
+}
+function ajout(nb1, nb2, callback) {
+    let res = nb1 + nb2;
+    callback(res);
+}
+ajout(10, 3, afficherAge);
